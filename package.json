@@ -1,0 +1,23 @@
+{
+  "name": "autenticacion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Cami <citrocamila06@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
+  
+  "eslintConfig": {
+      "extends": "standard"
+  }
+}
