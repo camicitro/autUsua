@@ -1,0 +1,6 @@
+### GET NORMAL
+http://localhost:3000/
+
+
+### GET PROTEGIDO 
+http://localhost:3000/protected

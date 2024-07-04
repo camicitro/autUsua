@@ -1,2 +1,43 @@
 se recomienda mas usar cookies que local storage
 
+
+
+
+
+HASH Y HASH SYNC DE BCRYPT:
+const hashedPassword = bcrypt.hashSync(password, 10)
+el numero luego de la password es para generar el password hasheado, es el numero de vueltas que le va a dar, mientras mayor sea, mas potente es la codificacion pero tarda mas tiempo
+(codificar es costoso)
+
+* hash: no bloquea pero debe devolver una promesa
+* hashSync: bloquea el thread principal
+
+
+
+
+
+*** Destructuring assignment + operador rest('...')***
+const { password: _, ...publicUser } = user //para quitar solo la contraseña
+esta tecnica se usa para extraer propiedades de un objeto, en este caso para excluir una propiedad especifica del objeto (password)
+
+la variable _ es solo una voncencion para indicar que no se va a usar esta variable
+el operador rest toma las propiedades restantes del objeto user que no fueron desestructuradas y las agrupa en un nuevo objeto llamado publicUser
+
+
+
+
+
+*** JWT ***
+Sirven para representar la sesion, forma de comunicacion sin necesidad de tener un estado
+encabezado, payload, firma
+(ver jwt.io)
+palabra secreta --> no debe ser facil de sacar con fuerza bruta, es muy importante
+NO OLVIDAR LA PALABRA SECRETA
+TODA LA INFO ESTA EN EL PROPIO TOKEN
+lo ideal es guardarlo en una cookie no en la localstorage ni sessionstorage
+
+
+
+faltaria en este codigo como se hace el refresco de la cookie:
+deberiamos hacer un refresh TOKEN
+en el login deberiamos crear un segundo token q seria el refreshToken que tiene mucho mas tiempo, lo guardamos en una cookie y se haria algo diferente al access token (el de acceso dura poco tiempo y el de refresco conforme usamos la pagina creamos un nuevoa ccess token)
